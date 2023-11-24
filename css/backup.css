@@ -1,0 +1,165 @@
+/* Reset básico para remover estilos predeterminados del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* header */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo1 {
+    margin-left: 8.5rem;
+}
+
+.logo {
+    width: 150px;
+}
+
+.buscador {
+    border: none;
+    border-bottom: 1px solid transparent;
+    transition: .2s ease-in;
+}
+
+.buscador:hover::placeholder {
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+}
+
+.buscador:hover {
+    border-bottom: 1px solid black;
+}
+
+.buscador:focus {
+    outline: 0;
+    border: none;
+}
+
+.margen {
+    margin: 0 !important;
+}
+
+/* NAVBAR */
+
+ul {
+    padding: 1rem 5rem !important;
+    margin: 0 !important;
+}
+
+li {
+    padding: 5px;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    /* Esto distribuirá los elementos del menú principal uniformemente */
+    margin: 0 !important;
+    background-color: #ffffff;
+}
+
+.navbar .dropdown .dropdown-content {
+    z-index: 1050;
+}
+
+.menu {
+    list-style: none;
+    width: 100%;
+    /* Asegúrate de que el ul ocupe todo el ancho disponible */
+    display: flex;
+    justify-content: space-between;
+    /* Aplica el espaciado */
+}
+
+.menu>li {
+    position: relative;
+}
+
+.menu>li a {
+    display: block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+
+.menu li a:hover,
+.dropdown:hover .dropbtn {
+    font-weight: 500;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    /* Utiliza fixed en lugar de absolute para posicionamiento respecto a la ventana */
+    width: 100vw;
+    /* Establece el ancho del submenú al ancho de la ventana */
+    left: 0;
+    /* Alinea el submenú a la izquierda de la ventana */
+    background-color: #ffffff;
+
+}
+
+.dropdown-content li {
+    clear: both;
+    /* Elimina cualquier flotamiento previo */
+}
+
+.dropdown-content li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.dropdown-content li a:hover {
+    font-weight: 500;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Asegúrate de limpiar el float de los elementos li */
+.menu>li::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.fixedd-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+}
+
+.fixed-top .navbar-logo {
+    display: flex;
+    /* Muestra el logo cuando la barra de navegación es fija */
+}
+
+.navbar-logo img {
+    width: 100px;
+    /* o la altura que desees para tu logo */
+}
+
+
+/* carrousel */
+.carousel-indicators li {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+}
+
+.carousel {
+    z-index: 5;
+}
