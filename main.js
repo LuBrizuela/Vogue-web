@@ -5,6 +5,7 @@ var sticky = navbar.offsetTop;
 
 // Añade la clase 'fixed-top' y muestra el logo al hacer scroll
 function stickNavbar() {
+  debugger
   if (window.scrollY >= sticky) {
     navbar.classList.add('fixed-top');
     logo.style.display = 'block'; // Muestra el logo
@@ -17,23 +18,48 @@ function stickNavbar() {
 }
 
 // Escucha el evento de scroll
-window.onscroll = function() {
+window.onscroll = function () {
   stickNavbar();
 };
 
+const express = require('express');
+const fetch = require('node-fetch');
+const app = express();
+const PORT = 3000;
 
-// API
+// Middleware para refrescar el token si es necesario
+app.use(async (req, res, next) => {
+  // Aquí implementarías la lógica para verificar si el token está próximo a expirar y refrescarlo
+  next();
+});
 
-const tiendaNube = async() => {
+// Endpoint que el frontend utilizará para obtener productos
+app.get('/products', async (req, res) => {
+  const apiURL = 'https://api.tiendanube.com/v1/3988841/products';
+  const accessToken = 'd9cfcce34d55f143bd28e863e03d4b04bbab6eb6'; // Este token deberías obtenerlo del módulo de autenticación
+
   try {
-    const resp = await fetch('https://api.tiendanube.com/v1/9142');
+    const response = await fetch(apiURL, {
+      headers: {
+        'Authorization': `bearer ${accessToken}`,
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, GET, PUT',
+        'Access-Control-Allow-Headers': 'Content-Type'
+      }
+    });
 
-    console.log(resp);
+    if (!response.ok) throw new Error('Error en la solicitud a Tienda Nube');
 
-    const datos = await resp.json()
-  } catch(error){
-    console.log(error);
+    const products = await response.json();
+    res.json(products);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
-}
+});
 
-tiendaNube();
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en puerto ${PORT}`);
+});
+
+
+
