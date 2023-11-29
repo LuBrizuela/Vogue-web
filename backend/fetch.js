@@ -10,7 +10,9 @@ fetch(endpointURL, {
     return response.json();
   })
   .then(data => {
-    console.log('Datos de la API externa:', data);
+    createProductsCards(data);
+
+    console.log(data);
   })
   .catch(error => {
     console.error('Error:', error);

@@ -8,8 +8,8 @@ app.use(cors());
 
 // Endpoint que el frontend utilizará para obtener productos
 app.get('/products', async (req, res) => {
-  const apiURL = 'https://api.tiendanube.com/v1/3989799/products';
-  const accessToken = '6451afe30f51035a70a4ba8d4b1fee64a0dd8a23'; // Este token deberías obtenerlo del módulo de autenticación
+  const apiURL = 'https://api.tiendanube.com/v1/3988841/products';
+  const accessToken = 'd7d0f06f55277c98dfc2a847bc41863b4fc20088'; // Este token deberías obtenerlo del módulo de autenticación
 
   try {
     const response = await fetch(apiURL, {
