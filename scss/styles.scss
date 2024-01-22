@@ -9,6 +9,11 @@
 a {
     text-decoration: none;
     color: black;
+
+    &:hover {
+        color: #000;
+
+    }
 }
 
 .logo1 {
@@ -216,10 +221,156 @@ li {
 
 .carousel-control-prev,
 .carousel-control-next {
-  background-color: black;
-  width: 5vh;
-  height: 5vh;
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
+    background-color: black;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+//
+
+.carousel {
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        color: #505050;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding: 1rem 0 0 0;
+    }
+}
+
+#carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#carousel {
+    overflow: hidden;
+    width: 960px;
+
+    display: flex;
+    scroll-snap-type: x mandatory;
+}
+
+.card {
+    flex: 0 0 300px;
+
+    margin: 0 10px;
+
+    scroll-snap-align: start;
+}
+
+
+#btn-left,
+#btn-right {
+    width: 50px;
+    height: 50px;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+// FOOTER
+
+.contenedor-footer {
+    background-color: #dbdbdb;
+    padding: 2rem;
+
+    .info {
+        height: 300px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 3fr 1fr;
+
+        //
+
+
+        .subscription-box {
+            display: flex;
+            padding: 1rem 0;
+          }
+          
+          .subscription-box input[type="email"] {
+            border: none;
+            padding: 10px;
+            margin-right: -1px;
+            flex-grow: 1;
+          }
+          
+          .subscription-box button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+          }
+          
+
+          .subscription-box input::placeholder {
+            color: #ccc;
+          }
+          
+
+          .subscription-box input:focus {
+            outline: none;
+          }
+          
+
+          .subscription-box button:hover {
+            background-color: #333;
+          }
+          
+        //
+
+
+        .inf-foot {
+            display: block;
+
+            .icon {
+                display: flex;
+                justify-content: space-around;
+            }
+            h1 {
+                color: #505050;
+                font-size: 20px;
+                font-weight: 400;
+                text-transform: uppercase;
+            }
+
+            li {
+ 
+                a {
+                    color: #505050;
+                    font-size: 12px;
+                }
+            }
+
+            p {
+                color: #505050;
+            }
+        }
+    }
+
+    .cont {
+        display: flex;
+        border-top: #8f8063 1px solid;
+        padding: 1rem 1rem 0 1rem;
+        
+        p {
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            color: #696969;
+        }
+    }
 }

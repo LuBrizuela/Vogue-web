@@ -9,6 +9,8 @@
 a {
   text-decoration: none;
   color: black; }
+  a:hover {
+    color: #000; }
 
 .logo1 {
   margin-left: 8.5rem; }
@@ -162,3 +164,90 @@ li {
   border-radius: 50%;
   top: 50%;
   transform: translateY(-50%); }
+
+.carousel h1 {
+  display: flex;
+  justify-content: center;
+  color: #505050;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 1rem 0 0 0; }
+
+#carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; }
+
+#carousel {
+  overflow: hidden;
+  width: 960px;
+  display: flex;
+  scroll-snap-type: x mandatory; }
+
+.card {
+  flex: 0 0 300px;
+  margin: 0 10px;
+  scroll-snap-align: start; }
+
+#btn-left,
+#btn-right {
+  width: 50px;
+  height: 50px;
+  background-color: #ddd;
+  border: none;
+  cursor: pointer; }
+
+.contenedor-footer {
+  background-color: #dbdbdb;
+  padding: 2rem; }
+  .contenedor-footer .info {
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 3fr 1fr; }
+    .contenedor-footer .info .subscription-box {
+      display: flex;
+      padding: 1rem 0; }
+    .contenedor-footer .info .subscription-box input[type="email"] {
+      border: none;
+      padding: 10px;
+      margin-right: -1px;
+      flex-grow: 1; }
+    .contenedor-footer .info .subscription-box button {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer; }
+    .contenedor-footer .info .subscription-box input::placeholder {
+      color: #ccc; }
+    .contenedor-footer .info .subscription-box input:focus {
+      outline: none; }
+    .contenedor-footer .info .subscription-box button:hover {
+      background-color: #333; }
+    .contenedor-footer .info .inf-foot {
+      display: block; }
+      .contenedor-footer .info .inf-foot .icon {
+        display: flex;
+        justify-content: space-around; }
+      .contenedor-footer .info .inf-foot h1 {
+        color: #505050;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase; }
+      .contenedor-footer .info .inf-foot li a {
+        color: #505050;
+        font-size: 12px; }
+      .contenedor-footer .info .inf-foot p {
+        color: #505050; }
+  .contenedor-footer .cont {
+    display: flex;
+    border-top: #8f8063 1px solid;
+    padding: 1rem 1rem 0 1rem; }
+    .contenedor-footer .cont p {
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      color: #696969; }
